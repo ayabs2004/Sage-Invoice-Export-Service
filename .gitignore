@@ -51,5 +51,8 @@ Thumbs.db
 client/server_config.json
 server_config.json
 
+# ── Dossier serveur (exécutables compilés + config locale) ──
+serveur/
+
 # ── Logos (données propres à chaque client) ─────────────────
 logos/
