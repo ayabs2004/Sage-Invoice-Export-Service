@@ -1,0 +1,56 @@
+# ============================================================
+# .gitignore - Sage Invoice Export Service
+# ============================================================
+
+# ── Environnement & Secrets ──────────────────────────────────
+.env
+serveur/.env
+serveur/serveur2/.env
+
+# ── Environnements virtuels Python ──────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Build & Distribution (PyInstaller) ──────────────────────
+build/
+dist/
+*.spec
+
+# ── Exécutables compilés ────────────────────────────────────
+*.exe
+*.zip
+
+# ── Données exportées (fichiers générés) ────────────────────
+*.xlsx
+*.xls
+*.csv
+
+# ── Cache Python ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ── Logs ─────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── IDE & Éditeurs ───────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
+.DS_Store
+
+# ── Config client (contient l'URL du serveur local) ─────────
+client/server_config.json
+server_config.json
+
+# ── Logos (données propres à chaque client) ─────────────────
+# Décommentez si vous ne souhaitez PAS versionner les logos
+# logos/

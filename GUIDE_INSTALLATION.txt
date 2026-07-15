@@ -1,0 +1,72 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                                                                           ║
+║                    SAGE EXPORT - GUIDE D'INSTALLATION                    ║
+║                          ARCHITECTURE SERVEUR/CLIENT                      ║
+║                          Version 2.0 - 2026                               ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+Ce guide explique comment installer Sage Export en mode sécurisé.
+Le client (poste utilisateur) n'a aucun accès direct à la base de données.
+Toutes les requêtes passent par le Serveur API.
+
+═══════════════════════════════════════════════════════════════════════════
+PARTIE 1 : INSTALLATION DU SERVEUR (Poste avec accès SQL)
+═══════════════════════════════════════════════════════════════════════════
+
+Le serveur est le seul poste qui communique avec la base de données Sage.
+
+1. PRÉREQUIS :
+   • Accès SQL Server.
+   • Python installé ou exécutable serveur généré.
+
+2. CONFIGURATION :
+   • Renommez ".env.example" en ".env".
+   • Remplissez les identifiants SQL dans le fichier ".env".
+   • SEUL LE SERVEUR possède ces identifiants.
+
+3. SÉCURITÉ (PARE-FEU) :
+   • Autorisez le port 8000 en entrée sur ce poste pour que les clients 
+     puissent se connecter.
+
+4. LANCEMENT :
+   •Action : Lancer SageExport.exe et laisser tourner.
+   • Le serveur doit rester allumé pour que les clients puissent travailler.
+
+═══════════════════════════════════════════════════════════════════════════
+PARTIE 2 : INSTALLATION DU CLIENT (Postes Utilisateurs)
+═══════════════════════════════════════════════════════════════════════════
+
+Le client est une version légère qui ne nécessite aucun driver SQL.
+
+1. CONFIGURATION :
+   • Ouvrez le fichier "server_config.json".
+   • Remplacez "localhost" par l'adresse IP de votre serveur.
+     Exemple: "API_URL": "http://192.168.1.50:8000"
+
+2. LANCEMENT :
+   • Double-cliquez sur le lanceur client (ex: "client_launcher.py" ou son .exe).
+   • L'interface s'ouvrira dans le navigateur.
+
+3. AVANTAGES :
+   • Sécurité totale : le client ne connaît pas le mot de passe SQL.
+   • Simplicité : rien à installer (pas d'ODBC, pas de drivers).
+
+═══════════════════════════════════════════════════════════════════════════
+DÉPANNAGE
+═══════════════════════════════════════════════════════════════════════════
+
+PROBLÈME : Le client affiche "Erreur de connexion"
+────────────────────────────────────────────────────────────────────────────
+• Vérifiez que le serveur est bien allumé.
+• Vérifiez l'adresse IP dans "server_config.json" du client.
+• Vérifiez que le pare-feu du serveur autorise le port 8000.
+
+PROBLÈME : Une erreur SQL s'affiche sur la console du serveur
+────────────────────────────────────────────────────────────────────────────
+• Vérifiez les identifiants dans le fichier ".env" du serveur.
+• Vérifiez que le service SQL est démarré sur le serveur.
+
+═══════════════════════════════════════════════════════════════════════════
+                            FIN DU GUIDE
+═══════════════════════════════════════════════════════════════════════════
