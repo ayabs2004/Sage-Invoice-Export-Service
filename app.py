@@ -357,7 +357,7 @@ def generate_excel():
 
 @app.route('/inspect', methods=['GET'])
 def inspect_table():
-    company = request.args.get("company", "jacob")
+    company = request.args.get("company", "societe1")
     table = request.args.get("table", "F_DOCENTETE")
 
     db_env_key = f"DB_DATABASE_{company.upper()}"

@@ -85,7 +85,7 @@ Génère et télécharge un fichier Excel de factures.
 **Corps JSON :**
 ```json
 {
-  "company": "JACOB",
+  "company": "SOCIETE1",
   "month": "2025-01",
   "type": "vente"
 }
@@ -97,7 +97,7 @@ Génère et télécharge un fichier Excel de factures.
 | `month` | `YYYY-MM` | Mois à exporter |
 | `type` | `vente`, `achat`, `achat_vente` | Type de documents |
 
-### `GET /inspect?company=JACOB&table=F_DOCENTETE`
+### `GET /inspect?company=SOCIETE1&table=F_DOCENTETE`
 Inspecte les colonnes d'une table Sage (pour diagnostic).
 
 ---
@@ -122,8 +122,8 @@ Voir le fichier **[.env.example](.env.example)** pour la liste complète des var
 Placez les logos dans le dossier `logos/` :
 ```
 logos/
-├── jacob.png
-├── adikimya.jpeg
+├── societe1.png
+├── societe2.jpeg
 └── ...
 ```
 Le nom du fichier doit correspondre au nom de la société (insensible à la casse).
