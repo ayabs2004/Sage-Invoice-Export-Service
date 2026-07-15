@@ -52,5 +52,4 @@ client/server_config.json
 server_config.json
 
 # ── Logos (données propres à chaque client) ─────────────────
-# Décommentez si vous ne souhaitez PAS versionner les logos
-# logos/
+logos/
